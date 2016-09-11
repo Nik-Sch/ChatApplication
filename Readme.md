@@ -10,8 +10,6 @@ What the bytes represent is specified below
 
 ##The Protocol
 
-- 7 byte - connectionID
-- 4 byte - packageID
 - 1 byte - packageType
     - registration
     - authentication

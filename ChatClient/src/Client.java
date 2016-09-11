@@ -2,16 +2,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.lang.reflect.Array;
 import java.net.InetAddress;
 import java.net.Socket;
-import java.nio.ByteBuffer;
 
 public class Client{
+  Socket socket;
   private String server;
   private int port;
   private InetAddress address;
-  Socket socket;
 
   public Client(String server, int port){
     this.server = server;
@@ -50,24 +48,19 @@ public class Client{
     }
   }
 
-  private void sendConnectionPackage() throws IOException{
-    OutputStream out = socket.getOutputStream();
-    byte[] size = ByteBuffer.allocate(4).putInt(22).array();
-    byte[] data = "Connection Established".getBytes();
-    out.write(concatenate(size, data));
+  private void sendConnectionPackage(){
+    sendPackage(new ByteWriter("Connection Package".getBytes()));
   }
 
-  public byte[] concatenate(byte[] a, byte[] b){
-    int aLen = a.length;
-    int bLen = b.length;
-
-    @SuppressWarnings("unchecked")
-    byte[] c = (byte[]) Array.newInstance(a.getClass().getComponentType(), aLen+bLen);
-    System.arraycopy(a, 0, c, 0, aLen);
-    System.arraycopy(b, 0, c, aLen, bLen);
-
-    return c;
+  private void sendPackage(ByteWriter byteWriter){
+    try{
+      OutputStream out = socket.getOutputStream();
+      out.write(byteWriter.prependSize().getBuffer());
+    }catch (IOException e){
+      e.printStackTrace();
+    }
   }
+
 
 
   public void listen(){

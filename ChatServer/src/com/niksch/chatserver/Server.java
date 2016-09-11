@@ -11,7 +11,6 @@ public class Server{
   private int port = 54242;
   private ServerSocket socket;
   private boolean isStopped = false;
-  private Thread runningThread;
   private ExecutorService threadPool = Executors.newFixedThreadPool(128);
 
   public Server(){}
@@ -24,7 +23,7 @@ public class Server{
     try{
       // start the server in a new thread
       socket = new ServerSocket(port);
-      runningThread = new Thread(this::listen);
+      Thread runningThread = new Thread(this::listen);
       runningThread.start();
     }catch (IOException e){
       e.printStackTrace();
@@ -65,6 +64,4 @@ public class Server{
       e.printStackTrace();
     }
   }
-
 }
-

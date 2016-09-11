@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/ChatClient/ChatClient.iml" filepath="$PROJECT_DIR$/ChatClient/ChatClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChatSerialization/ChatSerialization.iml" filepath="$PROJECT_DIR$/ChatSerialization/ChatSerialization.iml" />
       <module fileurl="file://$PROJECT_DIR$/ChatServer/ChatServer.iml" filepath="$PROJECT_DIR$/ChatServer/ChatServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChatUtilities/ChatUtilities.iml" filepath="$PROJECT_DIR$/ChatUtilities/ChatUtilities.iml" />
     </modules>
   </component>
 </project>
