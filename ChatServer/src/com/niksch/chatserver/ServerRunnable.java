@@ -43,9 +43,11 @@ public class ServerRunnable implements Runnable{
         byte[] data = readFromStream(in, c);
         if (data == null)
           break;
+
         // dump the data
         dump(data);
-        out.write(("Received " + c + " bytes\r\n").getBytes());
+
+        // do stuff with the data
       }catch (IOException e){
         e.printStackTrace();
       }

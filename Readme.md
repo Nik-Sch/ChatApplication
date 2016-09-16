@@ -35,3 +35,7 @@ What the bytes represent is specified below
 5. Server response
     - no if pwd is wrong
     - yes, with connectionID, marks user online
+    
+###status
+
+1. 

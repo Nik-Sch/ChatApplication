@@ -1,0 +1,57 @@
+2016-09-17 00:29:39,806 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 00:48:37,739 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 00:48:37,742 ERROR [main] com.niksch.database.SQLiteJDBC - While connecting to the db an Exception occurred
+java.sql.SQLException: [SQLITE_ERROR] SQL error or missing database (near "PROGMA": syntax error)
+	at org.sqlite.core.DB.newSQLException(DB.java:890)
+	at org.sqlite.core.DB.newSQLException(DB.java:901)
+	at org.sqlite.core.DB.throwex(DB.java:868)
+	at org.sqlite.core.NativeDB.prepare(Native Method)
+	at org.sqlite.core.DB.prepare(DB.java:211)
+	at org.sqlite.jdbc3.JDBC3Statement.executeQuery(JDBC3Statement.java:81)
+	at com.niksch.database.SQLiteJDBC.<init>(SQLiteJDBC.java:30)
+	at com.niksch.database.SQLiteJDBC.<init>(SQLiteJDBC.java:8)
+	at com.niksch.database.SQLiteJDBC$holder.<clinit>(SQLiteJDBC.java:12)
+	at com.niksch.database.SQLiteJDBC.getInstance(SQLiteJDBC.java:16)
+	at com.niksch.chatserver.ChatServer.main(ChatServer.java:11)
+2016-09-17 00:49:16,727 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 00:49:40,284 ERROR [main] com.niksch.database.SQLiteJDBC - While connecting to the db an Exception occurred
+java.sql.SQLException: column 0 out of bounds [1,1]
+	at org.sqlite.core.CoreResultSet.checkCol(CoreResultSet.java:84)
+	at org.sqlite.core.CoreResultSet.markCol(CoreResultSet.java:97)
+	at org.sqlite.jdbc3.JDBC3ResultSet.getInt(JDBC3ResultSet.java:388)
+	at com.niksch.database.SQLiteJDBC.<init>(SQLiteJDBC.java:31)
+	at com.niksch.database.SQLiteJDBC.<init>(SQLiteJDBC.java:8)
+	at com.niksch.database.SQLiteJDBC$holder.<clinit>(SQLiteJDBC.java:12)
+	at com.niksch.database.SQLiteJDBC.getInstance(SQLiteJDBC.java:16)
+	at com.niksch.chatserver.ChatServer.main(ChatServer.java:11)
+2016-09-17 00:50:01,621 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 00:52:47,134 ERROR [main] com.niksch.database.SQLiteJDBC - While connecting to the db an Exception occurred
+java.sql.SQLException: column 0 out of bounds [1,1]
+	at org.sqlite.core.CoreResultSet.checkCol(CoreResultSet.java:84)
+	at org.sqlite.core.CoreResultSet.markCol(CoreResultSet.java:97)
+	at org.sqlite.jdbc3.JDBC3ResultSet.getInt(JDBC3ResultSet.java:388)
+	at com.niksch.database.SQLiteJDBC.<init>(SQLiteJDBC.java:31)
+	at com.niksch.database.SQLiteJDBC.<init>(SQLiteJDBC.java:8)
+	at com.niksch.database.SQLiteJDBC$holder.<clinit>(SQLiteJDBC.java:12)
+	at com.niksch.database.SQLiteJDBC.getInstance(SQLiteJDBC.java:16)
+	at com.niksch.chatserver.ChatServer.main(ChatServer.java:11)
+2016-09-17 01:03:04,752 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 01:03:04,769 ERROR [main] com.niksch.database.SQLiteJDBC - While adding a user an Exception occurred
+java.sql.SQLException: near ")": syntax error
+	at org.sqlite.core.NativeDB.throwex(NativeDB.java:397)
+	at org.sqlite.core.NativeDB._exec(Native Method)
+	at org.sqlite.jdbc3.JDBC3Statement.executeUpdate(JDBC3Statement.java:116)
+	at com.niksch.database.SQLiteJDBC.addUser(SQLiteJDBC.java:57)
+	at com.niksch.chatserver.ChatServer.main(ChatServer.java:12)
+2016-09-17 01:05:45,384 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 01:05:45,386 INFO  [main] com.niksch.database.SQLiteJDBC - Created the users table if necessary
+2016-09-17 01:05:45,424 INFO  [main] com.niksch.database.SQLiteJDBC - Added the user '54242' to the db
+2016-09-17 01:09:52,675 INFO  [main] com.niksch.database.SQLiteJDBC - Database started successfully.
+2016-09-17 01:09:52,677 INFO  [main] com.niksch.database.SQLiteJDBC - Created the users table if necessary
+2016-09-17 01:09:52,677 ERROR [main] com.niksch.database.SQLiteJDBC - While adding user '54242' an Exception occurred
+java.sql.SQLException: UNIQUE constraint failed: users.userID
+	at org.sqlite.core.NativeDB.throwex(NativeDB.java:397)
+	at org.sqlite.core.NativeDB._exec(Native Method)
+	at org.sqlite.jdbc3.JDBC3Statement.executeUpdate(JDBC3Statement.java:116)
+	at com.niksch.database.SQLiteJDBC.addUser(SQLiteJDBC.java:57)
+	at com.niksch.chatserver.ChatServer.main(ChatServer.java:12)
